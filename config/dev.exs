@@ -24,8 +24,7 @@ config :dramiter, DramiterWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "EwqwPC7r8jkhUqCMB9pKJ7Rd069Gt28dQZzNFOaxgOTNCW5aSyN9G3nioDlrX5ku",
   watchers: [
-    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)]
   ]
 
 # ## SSL Support
